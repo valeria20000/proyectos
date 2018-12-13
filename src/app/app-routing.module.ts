@@ -8,7 +8,7 @@ import { FormularioComponent } from './componentes/formulario/formulario.compone
 const routes: Routes = [
 
 { path: 'listado', component: ListadoComponent},
-{ path: 'formulario/:id', component: FormularioComponent, canActivate: [FormularioComponent]},
+{ path: 'formulario', component: FormularioComponent},
 { path: '', redirectTo: '/listado', pathMatch: 'full'},
 
 ];

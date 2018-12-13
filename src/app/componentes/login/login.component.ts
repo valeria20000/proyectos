@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     u.password = password;
 
     if (this.loginService.login(u)) {
-      this.router.navigate(["formulario/:id"]);
+      this.router.navigate(["formulario"]);
     } else {
       this.mensaje = "Credenciales incorrectas";
     }

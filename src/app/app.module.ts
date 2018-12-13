@@ -9,6 +9,12 @@ import { ListadoComponent } from './componentes/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImnobiliariaCardComponent } from './componentes/imnobiliaria-card/imnobiliaria-card.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { LoginService } from './providers/login.service';
+import { PrivadoGuard } from './guards/privado.guard';
+import { InmobiliariaService } from './providers/inmobiliaria.service';
+import { CasaPipe } from './pipes/casa.pipe';
+
+
 
 
 @NgModule({
@@ -18,6 +24,7 @@ import { LoginComponent } from './componentes/login/login.component';
     FormularioComponent,
     ImnobiliariaCardComponent,
     LoginComponent,
+    CasaPipe,
 
   ],
   imports: [
@@ -25,9 +32,15 @@ import { LoginComponent } from './componentes/login/login.component';
     AppRoutingModule,
     HttpClientModule,//peticiones Http
     FormsModule,
+    
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    InmobiliariaService,
+    LoginService,
+    PrivadoGuard
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

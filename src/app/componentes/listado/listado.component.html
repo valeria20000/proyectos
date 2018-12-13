@@ -7,9 +7,14 @@
 
         <div>
 
+                <li *ngIf="logueado()" class="nav-item">
                 <a class="btn btn-primary float-right" [routerLink]="['../formulario', -1 ]" >Crear Nueva</a>
-          
+                </li>
             </div>
+
+            <div>
+                    <input type="checkbox" [(ngModel)]="alquiler"> En Alquiler
+                 </div>
 
        
 
