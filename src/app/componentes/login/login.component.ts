@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       ]),
       password: new FormControl("", [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(2),
         Validators.maxLength(25)
       ])
     });
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
     u.password = password;
 
     if (this.loginService.login(u)) {
-      this.router.navigate(["formulario"]);
+      this.router.navigate(["formulario/:id"]);
     } else {
       this.mensaje = "Credenciales incorrectas";
     }
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
 
   logout() {
     this.loginService.logout();
-    this.router.navigate(["comparador"]);
+    this.router.navigate(["listado"]);
   }
 
   logueado() {

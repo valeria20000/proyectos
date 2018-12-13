@@ -28,7 +28,6 @@ export class FormularioComponent implements OnInit {
       nombre: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
       precio: new FormControl('', [Validators.required, Validators.min(2), Validators.max(100)]),
       habitaciones: new FormControl('', [Validators.required, Validators.min(2), Validators.max(100)]),
-      edad: new FormControl('', [Validators.required, Validators.min(1), Validators.max(999)]),
       alquiler: new FormControl(false),
       foto: new FormControl('https://picsum.photos/300/300/?random', [Validators.required, Validators.pattern('^(http(s?):\/\/).+(\.(png|jpg|jpeg))$')]),
       direccion: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]),

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Inmobiliaria } from 'src/app/model/inmobiliaria';
 import { InmobiliariaService } from 'src/app/providers/inmobiliaria.service';
 import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/providers/login.service';
 
 @Component({
   selector: 'app-listado',
@@ -13,12 +14,13 @@ export class ListadoComponent implements OnInit {
   inmobiliarias: Inmobiliaria[];
   i1: Inmobiliaria;
   
-  constructor(public imobiliariaService: InmobiliariaService, public route: ActivatedRoute) { 
+  constructor(private loginService: LoginService, public imobiliariaService: InmobiliariaService, public route: ActivatedRoute) { 
     this.inmobiliarias = [];
     this.i1 = new Inmobiliaria();
    
   }
 
+ 
   ngOnInit() {
     this.recargarLista();
   }
@@ -38,4 +40,11 @@ export class ListadoComponent implements OnInit {
 
     this.i1 = inmobiliaria;
   }
+
+  logueado() {
+    if (this.loginService.isLogged()) {
+      return true
+    } else { return false }
+  }
+
 }

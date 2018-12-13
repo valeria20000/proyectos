@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<p class="text-danger">{{mensaje}}</p>
+      <form *ngIf="!logueado()" class="form-inline mt-2 mt-md-0" [formGroup]="formulario"  (ngSubmit)="sumitar()">
+        <input class="form-control mr-sm-2" type="text" formControlName="nombre" placeholder="admin" >
+        <input class="form-control mr-sm-2" type="password" formControlName="password"   placeholder="admin">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="entrar" [disabled]="formulario.status === 'INVALID'" >Zona Privada</button>
+      
+      </form>
+      <button *ngIf="logueado()" class="btn btn-outline-success my-2 my-sm-0" (click)="logout()">Cerrar Session - Logout</button>
