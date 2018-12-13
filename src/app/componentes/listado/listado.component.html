@@ -1,0 +1,14 @@
+
+<div class="row justify-content-center">
+
+    <div class="col-2">
+        <ul class="list-group lista">
+            <li *ngFor="let i of inmobiliarias (click)="seleccionar(i)" class="list-group-item" [class.active]="i == i1" >{{i.nombre}}</li>          
+            
+          </ul>
+    </div>
+ 
+<div class="col-4"><app-imnobiliaria-card [_imobiliaria]="i1" ></app-imnobiliaria-card></div>
+
+
+  </div>
