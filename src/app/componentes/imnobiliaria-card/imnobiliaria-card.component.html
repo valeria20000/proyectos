@@ -1,16 +1,18 @@
 <div class="card text-white bg-dark" style="width: 18rem;">
-  <div class="card-head">
-    <img class="card-img-top" src="{{inmobiliaria.foto}}" alt="Card image cap">
-    <span *ngIf="inmobiliaria.alquiler" class="alquiler">{{inmobiliaria.alquiler}}</span>
-    <span class="precio">{{inmobiliaria.precio}} Kcal</span>
-  </div>
+    <div class="card-head">
+        <img class="card-img-top" src="{{inmobiliaria.foto}}" alt="Card image cap">
+        <span *ngIf="inmobiliaria.alquiler" class="alquiler">Alquiler</span>
+        <span *ngIf="!inmobiliaria.alquiler" class="alquiler">Compra</span>
+        <span class="precio">{{inmobiliaria.precio}} €</span>
+        </div>
     <div class="card-body">
-      <h5 class="card-title">{{inmobiliaria.nombre}}</h5>
-      <p  class="card-text">{{inmobiliaria.direccion}} $</p>
-      <p  class="card-text">{{inmobiliaria.servicios}} $</p>
-      
+    <h5 class="card-title">{{inmobiliaria.nombre}}</h5>
+    <p class="card-text">{{inmobiliaria.direccion}}</p>
+    <p *ngFor="let servicio of inmobiliaria.servicios" class="card-text">
+    {{servicio.nombre}}: {{servicio.disponible}}
+    </p>
     </div>
-
-     <!-- comparador -->
-
-  </div>
+    
+    <!-- comparador -->
+    
+    </div>

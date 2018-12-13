@@ -1,14 +1,30 @@
-
+<div class="container">
 <div class="row justify-content-center">
+   
+
+
+    
+
+        <div>
+
+                <a class="btn btn-primary float-right" [routerLink]="['../formulario', -1 ]" >Crear Nueva</a>
+          
+            </div>
+
+       
 
     <div class="col-2">
         <ul class="list-group lista">
-            <li *ngFor="let i of inmobiliarias (click)="seleccionar(i)" class="list-group-item" [class.active]="i == i1" >{{i.nombre}}</li>          
+                <li *ngFor="let i of inmobiliarias" (click)="seleccionar(i)" class="list-group-item" [class.active]="i == i1" >{{i.nombre}}{{i.direccion}}{{i.precio}}
             
           </ul>
     </div>
+
+
  
 <div class="col-4"><app-imnobiliaria-card [_imobiliaria]="i1" ></app-imnobiliaria-card></div>
 
 
   </div>
+
+</div>

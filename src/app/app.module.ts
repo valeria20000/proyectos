@@ -8,6 +8,7 @@ import { FormularioComponent } from './componentes/formulario/formulario.compone
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ImnobiliariaCardComponent } from './componentes/imnobiliaria-card/imnobiliaria-card.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ImnobiliariaCardComponent } from './componentes/imnobiliaria-card/imnob
     ListadoComponent,
     FormularioComponent,
     ImnobiliariaCardComponent,
+    LoginComponent,
 
   ],
   imports: [
